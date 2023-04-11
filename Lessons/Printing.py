@@ -13,6 +13,13 @@ print(name)
 name = "John"
 print(name)
 
+# Naming
+# make your variable names readable so that you will know what they do when you come back to this code over time
+# Must Be 1 unite
+# Multiple words seperated with underscore NOT camel case
+# numbers at the end of a variable
+# do not use pre-established names like "new, input, or print"
+
 
 
 #Exercise 1-1
