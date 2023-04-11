@@ -11,6 +11,30 @@
 
 print(3*(3+3)/3-3)
 
+# Number manipulation
+# two methods for floor
+print(int(47/13))
+print(47//13)
+
+# rounding
+print(round(47/13, 2))
+
+# iteration
+stored_number = 15 / 3
+stored_number/= 3
+print(round(stored_number))
+
+# F strings
+# bad
+score = 0
+height = 1.8
+is_winning = True
+
+print("Your score is: " + str(score) + " and it is " + str(is_winning) + " that you are winning! While I have you on the line, your height in meters is: " + str(height))
+
+# good
+print(f"Your score is: {score} and it is {is_winning} that you are winning! While I have you on the line, your height is {height} meters tall.")
+
 
 # Exercise 2-1
 # Write a program that calculates the Body Mass Index (BMI) from a user's weight and height.
