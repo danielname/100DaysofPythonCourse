@@ -36,7 +36,7 @@ print("Your score is: " + str(score) + " and it is " + str(is_winning) + " that 
 print(f"Your score is: {score} and it is {is_winning} that you are winning! While I have you on the line, your height is {height} meters tall.")
 
 
-# Exercise 2-1
+# Exercise 2-2
 # Write a program that calculates the Body Mass Index (BMI) from a user's weight and height.
 #
 # The BMI is a measure of someone's weight taking into account their height. e.g. If a tall person and a short person both weigh the same amount, the short person is usually more overweight.
@@ -50,3 +50,27 @@ weight = input("enter your weight in kg: ")
 
 #Write your code below this line 👇
 print(float(weight)/float(height)**2)
+
+
+
+# Exercise 2-3
+# Create a program using maths and f-Strings that tells us how many days, weeks, months we have left if we live until 90 years old.
+#
+# It will take your current age as the input and output a message with our time left in this format:
+#
+# You have x days, y weeks, and z months left.
+#
+# Where x, y and z are replaced with the actual calculated numbers.
+
+# 🚨 Don't change the code below 👇
+age = input("What is your current age? ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+
+years_left = 90 - int(age)
+days_left = years_left * 365
+weeks_left = years_left * 52
+months_left = years_left * 12
+
+print(f"You have {days_left} days, {weeks_left} weeks, and {months_left} months left.")
