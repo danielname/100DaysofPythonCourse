@@ -46,3 +46,12 @@ print("New lines can be created with a backslash and n.")
 name = input("What is your name? ")
 length = len(name)
 print(length)
+
+
+# Exercise 1-4
+# Write a program that switches the values stored in the variables a and b.
+
+b = input("a: ")
+a = input("b: ")
+print("a: " + a)
+print("b: " + b)
