@@ -130,3 +130,41 @@ else:
     if extra_cheese == "Y":
         cost += 1
 print(f"Your final bill is: ${cost}.")
+
+
+# Exercise 3-5
+# You are going to write a program that tests the compatibility between two people.
+#
+# To work out the love score between two people:
+#
+# Take both people's names and check for the number of times the letters in the word TRUE occurs.
+#
+# Then check for the number of times the letters in the word LOVE occurs.
+#
+# Then combine these numbers to make a 2 digit number.
+
+# 🚨 Don't change the code below 👇
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+
+
+t_count = (name1 + name2).lower().count("t")
+r_count = (name1 + name2).lower().count("r")
+u_count = (name1 + name2).lower().count("u")
+e_count = (name1 + name2).lower().count("e")
+l_count = (name1 + name2).lower().count("l")
+o_count = (name1 + name2).lower().count("o")
+v_count = (name1 + name2).lower().count("v")
+true_count = t_count + r_count + u_count + e_count
+love_count = l_count + o_count + v_count + e_count
+count = int(str(true_count) + str(love_count))
+if count < 10 or count > 90:
+    print(f"Your score is {count}, you go together like coke and mentos.")
+elif count >= 40 and count <= 50:
+    print(f"Your score is {count}, you are alright together.")
+else:
+    print(f"Your score is {count}.")
