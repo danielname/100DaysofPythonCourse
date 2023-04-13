@@ -18,12 +18,15 @@ if height >= 120:
     cost = 0
     if age < 12:
         cost += 5
+        print("Child tickets are $5.")
     elif age <= 18:
         cost += 7
-    else:
+        print("Child tickets are $7.")
+else:
         cost += 12
-    # multiple if statements
-    pic = input("Would you like a picture of your ride?")
+        print("Child tickets are $12.")
+# multiple if statements
+    pic = input("Would you like a picture of your ride for $3? yes/no")
     if pic == "yes":
         cost += 3
     print(f"Your ticket costs ${cost}.")
