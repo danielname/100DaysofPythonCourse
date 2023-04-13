@@ -15,12 +15,18 @@ if height >= 120:
     print("You can ride the roller coaster!")
     age = int(input("How old are you? "))
     # nested condition
+    cost = 0
     if age < 12:
-        print("Your ticket costs $5.")
+        cost += 5
     elif age <= 18:
-        print("Your ticket costs $7.")
+        cost += 7
     else:
-        print("Your ticket costs $12.")
+        cost += 12
+    # multiple if statements
+    pic = input("Would you like a picture of your ride?")
+    if pic == "yes":
+        cost += 3
+    print(f"Your ticket costs ${cost}.")
 else:
     print("Sorry, you have to grow taller before you can ride.")
 
