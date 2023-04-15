@@ -9,7 +9,15 @@ print(fruits)
 fruits.extend(["melon", "raspberry"])
 print(fruits)
 
-# Exercise
+# nested lists
+pest_fruit = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears"]
+pest_veg = ["Spinach", "Kale", "Tomatoes", "Celery", "Potatoes"]
+dirty_dozen =[pest_fruit, pest_veg]
+print(dirty_dozen)
+print(dirty_dozen[0][3])
+
+
+# Exercise 4-2
 # You are going to write a program that will select a random name from a list of names. The person selected will have to pay for everybody's food bill.
 import random
 
