@@ -11,3 +11,10 @@ random_float = random.random()
 print(random_float)
 random0to5 = random.random() * 5
 print(random0to5)
+
+# Exercise 4-1
+heads_or_tails = random.randint(1,2)
+if heads_or_tails == 1:
+    print("Heads")
+else:
+    print("Tails")
