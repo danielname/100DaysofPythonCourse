@@ -39,3 +39,9 @@ for value in student_scores:
     if value > high_score:
         high_score = value
 print(f"The highest score in the class is: {high_score}")
+
+# Exercise 5-3
+sum = 0
+for number in range(0,101,2):
+    sum += number
+print(sum)
