@@ -4,6 +4,10 @@ for fruit in fruits:
     print(fruit)
     print(fruit + " pie")
 
+# range function
+for number in range(1,11,2):
+    print(number)
+
 # Exercise 5-1
 # You are going to write a program that calculates the average student height from a List of heights.
 
