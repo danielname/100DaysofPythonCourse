@@ -8,6 +8,16 @@ for fruit in fruits:
 for number in range(1,11,2):
     print(number)
 
+
+# While Loop
+# while condition == true:
+#     what is repeated
+
+# when to use while vs for
+# use for when you have to do something with each item in a list
+# use for to control exactly how many times you do something with range
+# while is better for a general condition, but be careful that the condition must be able to be false
+
 # Exercise 5-1
 # You are going to write a program that calculates the average student height from a List of heights.
 

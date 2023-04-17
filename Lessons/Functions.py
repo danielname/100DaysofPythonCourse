@@ -8,3 +8,4 @@ def my_function():
 
 # calling a function works the same as in JS
 my_function()
+
