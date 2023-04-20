@@ -17,3 +17,12 @@ def greet(something = "bill"):
     print(f"What's up, {something}?")
 greet("Joe") #Joe is the argument that gets passed
 greet() #if no argument is specified, the predefined "bill" should run.
+
+# multiple parameters
+def greet_with(name, location):
+    print(f"hello {name}, are you at {location}?")
+greet_with("Joe", "home")
+# positonal arguments: if no variable is specified, arguments are defined in order
+
+# can call functions with keywords
+greet_with(location="away", name="Sam")
