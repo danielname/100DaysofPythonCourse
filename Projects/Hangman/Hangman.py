@@ -7,10 +7,11 @@ lives = 6
 guessed_letters = []
 print(Hangman_Art.logo)
 #Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+# print(f'Pssst, the solution is {chosen_word}.')
 
 #Create Blanks
 display = []
+
 for letter in chosen_word:
     display.append('_')
 while display.count("_") > 0 and lives > 0:
