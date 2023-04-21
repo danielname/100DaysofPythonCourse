@@ -63,7 +63,7 @@ def prime_checker(number):
             prime = False
         else:
             check_value += 1
-    if prime == True:
+    if prime:
         print("It's a prime number.")
     else:
         print("It's not a prime number.")
