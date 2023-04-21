@@ -50,3 +50,27 @@ test_w = int(input("Width of wall: "))
 coverage = 5
 paint_calc(height=test_h, width=test_w, cover=coverage)
 
+
+# Exercise 8-2
+# You need to write a function that checks whether if the number passed into it is a prime number or not.
+#Write your code below this line 👇
+
+def prime_checker(number):
+    prime = True
+    check_value = 2
+    while prime == True and check_value < number:
+        if number % check_value == 0:
+            prime = False
+        else:
+            check_value += 1
+    if prime == True:
+        print("It's a prime number.")
+    else:
+        print("It's not a prime number.")
+
+
+#Write your code above this line 👆
+
+#Do NOT change any of the code below👇
+n = int(input("Check this number: "))
+prime_checker(number=n)
