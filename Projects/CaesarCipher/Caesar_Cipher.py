@@ -8,9 +8,9 @@ shift = int(input("Type the shift number:\n"))
 
 def caesar(text_input, shift_amount, encode_or_decode):
     new_text = ""
+    if encode_or_decode == "decode": #there is currently something wrong with decode I think the issue is on line 14
+        shift_amount *= -1
     for letter in text_input:
-        if encode_or_decode == "decode": #there is currently something wrong with decode I think the issue is on line 14
-            shift_amount *= -1
         new_text += alphabet[(alphabet.index(letter) + shift_amount) % len(alphabet)]
     result = input(f"{new_text}\nWould you like to encript or decript another message? yes/no\n")
     if result == "yes":
