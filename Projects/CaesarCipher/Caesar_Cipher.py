@@ -21,6 +21,5 @@ def caesar(text_input, shift_amount, encode_or_decode):
         text_new = input("Type your message:\n").lower()
         shift_new = int(input("Type the shift number:\n"))
         caesar(text_new, shift_new, direction_new)
-
 caesar(text, shift, direction)
 
