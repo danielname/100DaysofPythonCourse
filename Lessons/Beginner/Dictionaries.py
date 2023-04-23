@@ -26,6 +26,27 @@ for key in programming_dictionary:
     print(key)
     print(programming_dictionary[key])
 
+# Nesting
+# dictionary in dictionary
+nested_dic = {1: ["hello", "World"], 2: "hello world"}
+travel_log = {
+    "France": {"Cities_visited": ["Paris", "Lille", "Dijon"], "total_visits": 12},
+    "Germany": ["Berlin", "Hamburg"]
+}
+# dictionary in list
+travel_log = [
+    {
+        "country": "France",
+        "cities_visited": ["Paris", "Lille", "Dijon"],
+        "total_visits": 12
+    },
+    {
+        "country": "Germany",
+        "cities_visited": ["Berlin", "Hamburg", "Munich"],
+        "total_visits": 6
+    }
+]
+
 # Exercise 9-1
 # Write a program that converts their scores to grades. By the end of your program, you should have a new dictionary called student_grades that should contain student names for keys and their grades for values. The final version of the student_grades dictionary will be checked.
 #
