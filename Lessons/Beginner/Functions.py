@@ -38,6 +38,12 @@ def format_name(f_name, l_name):
 print(format_name("daniel", "name"))
 cap_name = format_name("dAniel", "name")
 
+# multiple returns
+# return exits the function, but we can use conditionals to exit where we want
+def format_name(f_name, l_name):
+    if f_name == "" or l_name == "":
+        return "you didnt provide valid inputs"
+    return f"{f_name} {l_name}".title()
 
 
 # Exercise 8-1
