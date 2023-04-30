@@ -24,52 +24,58 @@ print(logo)
 ## The computer is the dealer.
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-player_cards = [choice(cards), choice(cards)]
-player_score = 0
-dealer_cards = [choice(cards)]
-dealer_score = dealer_cards[0]
+player = []
+dealer = []
 
-for card in player_cards:
-    player_score += card
-    if player_score > 21 and 11 in player_cards:
-        player_score -= 10
-        player_cards[player_cards.index(11)] = 1
+def new_game():
 
-game = True
+    def deal_card(player):
+        player.append(choice(cards))
 
-while game:
-    print(f"    Your cards: {player_cards}, current score: {player_score}\n    Computer's first card: {dealer_score}")
-    hit = input("Type 'y' to hit, type 'n' to stay").lower()
-    if hit == "y":
-        new_card = choice(cards)
-        player_cards.append(new_card)
-        # The next few lines are repeated from above, make a function instead
-        player_score += new_card
-        if player_score > 21 and 11 in player_cards:
-            player_score -= 10
-            player_cards[player_cards.index(11)] = 1
-        if player_score > 21:
+    def count_score(player):
+        sum = 0
+        for card in player:
+            sum += card
+            if sum > 21 and 11 in player:
+                sum -= 10
+                player[player.index(11)] = 1
+        return sum
+
+    for card in range(0,2):
+        deal_card(player)
+        count_score(player)
+    deal_card(dealer)
+
+    game = True
+
+    while game:
+        print(f"    Your cards: {player}, current score: {count_score(player)}\n    Computer's first card: {dealer[0]}")
+        hit = input("Type 'y' to hit, type 'n' to stay").lower()
+        if hit == "y":
+            deal_card(player)
+            score = count_score(player)
+            if score > 21:
+                game = False
+                print(f"    Your cards: {player}, current score: {score}\nBust! You lose!")
+        else:
             game = False
-            print(f"    Your cards: {player_cards}, current score: {player_score}\nBust! You lose!")
-    else:
-        game = False
 
-if player_score <= 21:
-    while dealer_score < 17:
-        new_dealer_card = choice(cards)
-        dealer_cards.append(new_dealer_card)
-        dealer_score += new_dealer_card
-        if dealer_score > 21 and 11 in dealer_cards:
-            dealer_score -= 10
-            dealer_cards[dealer_cards.index(11)] = 1
-        print(f"    Computer's cards: {dealer_cards}, score: {dealer_score}")
-        if dealer_score > 21:
-            print("Computer busts! You win!")
+    if count_score(player) <= 21:
+        while count_score(dealer) < 17:
+            deal_card(dealer)
+            score = count_score(dealer)
+            print(f"    Computer's cards: {dealer}, score: {score}")
+            if score > 21:
+                print("Computer busts! You win!")
 
-if player_score <= 21 and dealer_score <= 21:
-    if player_score > dealer_score:
-        print("You win!")
-    elif dealer_score > player_score:
-        print("You Lose")
-    else:
-        print("Push")
+    if count_score(player) <= 21 and count_score(dealer) <= 21:
+        player_score = count_score(player)
+        dealer_score = count_score(dealer)
+        if player_score > dealer_score:
+            print("You win!")
+        elif dealer_score > player_score:
+            print("You Lose")
+        else:
+            print("Push")
+
+new_game()
