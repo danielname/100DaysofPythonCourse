@@ -35,3 +35,41 @@ for card in player_cards:
         player_score -= 10
         player_cards[player_cards.index(11)] = 1
 
+game = True
+
+while game:
+    print(f"    Your cards: {player_cards}, current score: {player_score}\n    Computer's first card: {dealer_score}")
+    hit = input("Type 'y' to hit, type 'n' to stay").lower()
+    if hit == "y":
+        new_card = choice(cards)
+        player_cards.append(new_card)
+        # The next few lines are repeated from above, make a function instead
+        player_score += new_card
+        if player_score > 21 and 11 in player_cards:
+            player_score -= 10
+            player_cards[player_cards.index(11)] = 1
+        if player_score > 21:
+            game = False
+            print(f"    Your cards: {player_cards}, current score: {player_score}\nBust! You lose!")
+    else:
+        game = False
+
+if player_score <= 21:
+    while dealer_score < 17:
+        new_dealer_card = choice(cards)
+        dealer_cards.append(new_dealer_card)
+        dealer_score += new_dealer_card
+        if dealer_score > 21 and 11 in dealer_cards:
+            dealer_score -= 10
+            dealer_cards[dealer_cards.index(11)] = 1
+        print(f"    Computer's cards: {dealer_cards}, score: {dealer_score}")
+        if dealer_score > 21:
+            print("Computer busts! You win!")
+
+if player_score <= 21 and dealer_score <= 21:
+    if player_score > dealer_score:
+        print("You win!")
+    elif dealer_score > player_score:
+        print("You Lose")
+    else:
+        print("Push")
