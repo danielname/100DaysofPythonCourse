@@ -78,4 +78,11 @@ def new_game():
         else:
             print("Push")
 
+    continue_playing = input("Would you like to play another hand? y/n").lower()
+    if continue_playing == "y":
+        for card in range(0, len(player)):
+            player.pop(0)
+        for card in range(0, len(dealer)):
+            dealer.pop(0)
+        new_game()
 new_game()
