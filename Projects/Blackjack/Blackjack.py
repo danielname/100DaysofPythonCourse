@@ -50,7 +50,7 @@ def new_game():
 
     while game:
         print(f"    Your cards: {player}, current score: {count_score(player)}\n    Computer's first card: {dealer[0]}")
-        hit = input("Type 'y' to hit, type 'n' to stay").lower()
+        hit = input("Type 'y' to hit, type 'n' to stay\n").lower()
         if hit == "y":
             deal_card(player)
             score = count_score(player)
@@ -78,7 +78,7 @@ def new_game():
         else:
             print("Push")
 
-    continue_playing = input("Would you like to play another hand? y/n").lower()
+    continue_playing = input("Would you like to play another hand? y/n\n").lower()
     if continue_playing == "y":
         for card in range(0, len(player)):
             player.pop(0)
