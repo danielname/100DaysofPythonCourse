@@ -102,3 +102,21 @@ def mutate(a_list):
   print(b_list)
 
 mutate([1,2,3,5,8,13])
+
+
+# Exercise 13-1
+# if has =, which is an assigner, needs == to test equality
+# number = int(input("Which number do you want to check?"))
+#
+# if number % 2 = 0:
+#   print("This is an even number.")
+# else:
+#   print("This is an odd number.")
+
+number = int(input("Which number do you want to check?"))
+
+if number % 2 == 0:
+  print("This is an even number.")
+else:
+  print("This is an odd number.")
+
