@@ -150,3 +150,30 @@ if year % 4 == 0:
     print("Leap year.")
 else:
   print("Not leap year.")
+
+
+# Exercise 13-3
+#condition for both has or not and
+# elifs are ifs, meaning that multiple things will be printed on fizzbuzz
+# number in brackets
+
+#for number in range(1, 101):
+  # if number % 3 == 0 or number % 5 == 0:
+  #   print("FizzBuzz")
+  # if number % 3 == 0:
+  #   print("Fizz")
+  # if number % 5 == 0:
+  #   print("Buzz")
+  # else:
+  #   print([number])
+
+# Fix
+for number in range(1, 101):
+  if number % 3 == 0 and number % 5 == 0:
+    print("FizzBuzz")
+  elif number % 3 == 0:
+    print("Fizz")
+  elif number % 5 == 0:
+    print("Buzz")
+  else:
+    print(number)
