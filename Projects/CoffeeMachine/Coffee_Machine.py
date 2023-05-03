@@ -62,6 +62,9 @@ while not caffeinated:
         resources['water'] += int(input("How much water would you like to add in ml: "))
         resources['milk'] += int(input("How much milk would you like to add in ml: "))
         resources['coffee'] += int(input("How much coffee would you like to add in g: "))
+
+    #     try to make a function that substitutes the name of the coffee for the 3 drinks. If the name is something else, return "Sorry, that drink is not sold by this machine
+
     elif user_input == 'espresso':
         if MENU['espresso']['ingredients']['water'] > resources['water']:
             not_enough_water()
@@ -94,6 +97,23 @@ while not caffeinated:
                 resources['coffee'] -= MENU['latte']['ingredients']['coffee']
                 money += MENU['latte']['cost']
                 print(f"Your change is ${round(total_pay - MENU['latte']['cost'], 2)}\nHere is your latte ☕. Enjoy!")
+    elif user_input == 'cappuccino':
+        if MENU['cappuccino']['ingredients']['water'] > resources['water']:
+                not_enough_water()
+        if MENU['cappuccino']['ingredients']['milk'] > resources['milk']:
+            not_enough_milk()
+        if MENU['cappuccino']['ingredients']['coffee'] > resources['coffee']:
+            not_enough_coffee()
+        if MENU['cappuccino']['ingredients']['water'] <= resources['water'] and MENU['cappuccino']['ingredients']['milk'] <= resources['milk'] and MENU['cappuccino']['ingredients']['coffee'] <= resources['coffee']:
+            print("Your cappuccino will cost $3.00, please insert coins:")
+            total_pay = pay()
+            if total_pay < MENU['cappuccino']['cost']:
+                print("Sorry, that is not enough money. You have been refunded your coins.")
+            else:
+                resources['water'] -= MENU['cappuccino']['ingredients']['water']
+                resources['coffee'] -= MENU['cappuccino']['ingredients']['coffee']
+                money += MENU['cappuccino']['cost']
+                print(f"Your change is ${round(total_pay - MENU['cappuccino']['cost'], 2)}\nHere is your cappuccino ☕. Enjoy!")
     happy = input("Would you like another coffee? y/n ").lower()
     if happy == 'n':
         caffeinated = True
