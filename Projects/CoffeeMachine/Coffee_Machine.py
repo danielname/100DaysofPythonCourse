@@ -67,7 +67,7 @@ while not caffeinated:
             not_enough_water()
         if MENU['espresso']['ingredients']['coffee'] > resources['coffee']:
             not_enough_coffee()
-        if MENU['espresso']['ingredients']['water'] <= resources['water'] and MENU['espresso']['ingredients']['coffee'] < resources['coffee']:
+        if MENU['espresso']['ingredients']['water'] <= resources['water'] and MENU['espresso']['ingredients']['coffee'] <= resources['coffee']:
             print("Your espresso will cost $1.50, please insert coins:")
             total_pay = pay()
             if total_pay < MENU['espresso']['cost']:
@@ -77,6 +77,23 @@ while not caffeinated:
                 resources['coffee'] -= MENU['espresso']['ingredients']['coffee']
                 money += MENU['espresso']['cost']
                 print(f"Your change is ${round(total_pay - MENU['espresso']['cost'], 2)}\nHere is your espresso ☕. Enjoy!")
+    elif user_input == 'latte':
+        if MENU['latte']['ingredients']['water'] > resources['water']:
+            not_enough_water()
+        if MENU['latte']['ingredients']['milk'] > resources['milk']:
+            not_enough_milk()
+        if MENU['latte']['ingredients']['coffee'] > resources['coffee']:
+            not_enough_coffee()
+        if MENU['latte']['ingredients']['water'] <= resources['water'] and MENU['latte']['ingredients']['milk'] <= resources['milk'] and MENU['latte']['ingredients']['coffee'] <= resources['coffee']:
+            print("Your latte will cost $2.50, please insert coins:")
+            total_pay = pay()
+            if total_pay < MENU['latte']['cost']:
+                print("Sorry, that is not enough money. You have been refunded your coins.")
+            else:
+                resources['water'] -= MENU['latte']['ingredients']['water']
+                resources['coffee'] -= MENU['latte']['ingredients']['coffee']
+                money += MENU['latte']['cost']
+                print(f"Your change is ${round(total_pay - MENU['latte']['cost'], 2)}\nHere is your latte ☕. Enjoy!")
     happy = input("Would you like another coffee? y/n ").lower()
     if happy == 'n':
         caffeinated = True
