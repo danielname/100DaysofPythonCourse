@@ -23,7 +23,7 @@ timmy.shape("turtle")
 
 # Exercise 18-2
 # draw a dashed line with 10 dashes
-for _ in range(0,10):
+for _ in range(15):
     timmy.fd(10)
     timmy.penup()
     timmy.fd(10)
