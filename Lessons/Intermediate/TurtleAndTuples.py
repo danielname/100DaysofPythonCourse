@@ -16,10 +16,18 @@ timmy.shape("turtle")
 
 # Exercise 18-1
 # Draw a square
-for num in range(0,4):
-    timmy.forward(100)
-    timmy.right(90)
+# for num in range(0,4):
+#     timmy.forward(100)
+#     timmy.right(90)
 
+
+# Exercise 18-2
+# draw a dashed line with 10 dashes
+for _ in range(0,10):
+    timmy.fd(10)
+    timmy.penup()
+    timmy.fd(10)
+    timmy.pendown()
 
 
 screen = Screen()
