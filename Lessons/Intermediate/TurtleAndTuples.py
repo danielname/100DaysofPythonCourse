@@ -1,7 +1,11 @@
 from turtle import Turtle, Screen
+from random import randint
 
 timmy = Turtle()
 timmy.shape("turtle")
+
+screen = Screen()
+screen.colormode(255)
 # timmy.forward(50)
 # timmy.right(45)
 # timmy.forward(25)
@@ -23,12 +27,23 @@ timmy.shape("turtle")
 
 # Exercise 18-2
 # draw a dashed line with 10 dashes
-for _ in range(15):
-    timmy.fd(10)
-    timmy.penup()
-    timmy.fd(10)
-    timmy.pendown()
+# for _ in range(15):
+#     timmy.fd(10)
+#     timmy.penup()
+#     timmy.fd(10)
+#     timmy.pendown()
+
+# Exercise 18-3
+# draw regular shapes from 3 to 10 sides
+for num in range(3, 11):
+    r = randint(0,255)
+    g = randint(0,255)
+    b = randint(0,255)
+    timmy.pencolor(r, g, b)
+    for _ in range(num):
+        timmy.forward(100)
+        timmy.right(360/num)
 
 
-screen = Screen()
+
 screen.exitonclick()
