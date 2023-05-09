@@ -47,16 +47,26 @@ screen.colormode(255)
 
 # Exercise 18-4
 # Draw a random walk
-timmy.width(10)
-directions = [0, 90, 180, 270]
+# timmy.width(10)
+# directions = [0, 90, 180, 270]
 timmy.speed(0)
+# for _ in range(200):
+#     r = randint(0,255)
+#     g = randint(0,255)
+#     b = randint(0,255)
+#     timmy.pencolor(r, g, b)
+#     timmy.setheading(choice(directions))
+#     timmy.forward(20)
+
+
+# Exercise 18-5
 for _ in range(100):
     r = randint(0,255)
     g = randint(0,255)
     b = randint(0,255)
     timmy.pencolor(r, g, b)
-    timmy.right(choice(directions))
-    timmy.forward(10)
+    timmy.circle(100)
+    timmy.left(3.6)
 
 
 
