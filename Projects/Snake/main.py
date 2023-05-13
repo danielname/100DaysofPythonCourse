@@ -38,11 +38,10 @@ while game:
         game = False
         score.game_over()
 # game over on tail
-    for segment in snake.segments:
-        if segment != snake.head:
-            if snake.head.distance(segment) < 10:
-                game = False
-                score.game_over()
+    for segment in snake.segments[1:]:
+        if snake.head.distance(segment) < 10:
+            game = False
+            score.game_over()
 
 
 screen.exitonclick()
