@@ -1,6 +1,10 @@
 import time
 from turtle import Turtle
 MOVE_DISTANCE = 20
+RIGHT = 0
+UP = 90
+LEFT = 180
+DOWN = 270
 
 class Snake:
 
@@ -12,22 +16,27 @@ class Snake:
             turtle.penup()
             turtle.goto(x=(0 - (index * 20)), y=0)
             self.segments.append(turtle)
+        self.head = self.segments[0]
 
     def move(self):
         for segment in range(len(self.segments)-1, 0, -1):
             new_x = self.segments[segment - 1].xcor()
             new_y = self.segments[segment - 1].ycor()
             self.segments[segment].goto(x=new_x, y=new_y)
-        self.segments[0].forward(MOVE_DISTANCE)
+        self.head.forward(MOVE_DISTANCE)
 
     def up(self):
-        self.segments[0].setheading(90)
+        if self.head.heading() != DOWN:
+            self.segments[0].setheading(UP)
 
     def down(self):
-        self.segments[0].setheading(270)
+        if self.head.heading() != UP:
+            self.segments[0].setheading(DOWN)
 
     def left(self):
-        self.segments[0].setheading(180)
+        if self.head.heading() != RIGHT:
+            self.segments[0].setheading(LEFT)
 
     def right(self):
-        self.segments[0].setheading(0)
+        if self.head.heading() != LEFT:
+            self.segments[0].setheading(RIGHT)
