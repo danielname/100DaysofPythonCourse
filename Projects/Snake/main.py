@@ -32,6 +32,10 @@ while game:
         food.refresh()
         score.score += 1
         score.update()
+# game over
+    if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 290 or snake.head.ycor() < -290:
+        game = False
+        score.game_over()
 
 
 
