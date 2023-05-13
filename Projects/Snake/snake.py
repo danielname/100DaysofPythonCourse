@@ -3,9 +3,8 @@ from turtle import Turtle
 
 class Snake:
 
-    segments = []
-
-    def build(self):
+    def __init__(self):
+        self.segments = []
         for index in range(3):
             turtle = Turtle("square")
             turtle.color("white")

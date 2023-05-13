@@ -1,6 +1,6 @@
 import time
 from turtle import Turtle, Screen
-from Snake import Snake
+from snake import Snake
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -9,7 +9,6 @@ screen.title("Snake")
 screen.tracer(0)
 
 snake = Snake()
-snake.build()
 
 screen.update()
 game = True
