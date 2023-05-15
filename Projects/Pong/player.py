@@ -1,10 +1,6 @@
 from turtle import Turtle
 
 MOVE_DISTANCE = 20
-RIGHT = 0
-UP = 90
-LEFT = 180
-DOWN = 270
 
 
 class Player(Turtle):

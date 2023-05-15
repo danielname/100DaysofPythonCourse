@@ -8,6 +8,7 @@ screen = Screen()
 screen.bgcolor("black")
 screen.title("Pong")
 screen.setup(width=800, height=600)
+screen.tracer(0)
 
 lines = Turtle(visible=False)
 lines.color("white")
@@ -26,11 +27,14 @@ p1 = Player()
 p1.goto(P1_START)
 p2 = Player()
 p2.goto(P2_START)
+
+
 screen.listen()
 screen.onkey(p1.move_up, "w")
 screen.onkey(p1.move_down, "s")
 screen.onkey(p2.move_up, "Up")
 screen.onkey(p2.move_down, "Down")
 
+screen.tracer(1)
 
 screen.exitonclick()
