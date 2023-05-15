@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
 from player import Player
+from ball import Ball
 
 P2_START = (350, 0)
 P1_START = (-350, 0)
@@ -25,6 +26,7 @@ for _ in range(20):
 
 p1 = Player(P1_START)
 p2 = Player(P2_START)
+ball = Ball()
 
 
 screen.listen()
