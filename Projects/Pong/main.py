@@ -1,4 +1,8 @@
 from turtle import Turtle, Screen
+from player import Player
+
+P2_START = (350, 0)
+P1_START = (-350, 0)
 
 screen = Screen()
 screen.bgcolor("black")
@@ -18,6 +22,15 @@ for _ in range(20):
     lines.fd(15)
     lines.pendown()
 
+p1 = Player()
+p1.goto(P1_START)
+p2 = Player()
+p2.goto(P2_START)
+screen.listen()
+screen.onkey(p1.move_up, "w")
+screen.onkey(p1.move_down, "s")
+screen.onkey(p2.move_up, "Up")
+screen.onkey(p2.move_down, "Down")
 
 
 screen.exitonclick()
