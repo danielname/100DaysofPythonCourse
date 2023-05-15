@@ -36,5 +36,11 @@ screen.onkey(p2.move_up, "Up")
 screen.onkey(p2.move_down, "Down")
 
 screen.tracer(1)
+while True:
+    ball.fd(10)
+    if ball.distance(p1) < 15 or ball.distance(p2) < 15:
+        ball.paddle_bounce()
+    if ball.ycor() > 290 or ball.ycor() < -290:
+        ball.wall_bounce()
 
 screen.exitonclick()

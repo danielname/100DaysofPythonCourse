@@ -10,6 +10,7 @@ class Ball(Turtle):
         self.setheading(choice(possible_directions))
         self.color("white")
         self.penup()
+        self.speed(1)
 
     def wall_bounce(self):
         self.setheading(360 - self.heading())
