@@ -1,12 +1,12 @@
 from turtle import Turtle
 from random import randint, choice
+possible_directions = [randint(0,60), randint(120,179), randint(180,240), randint(300,359)]
 
 
 class Ball(Turtle):
 
     def __init__(self):
         super().__init__("circle")
-        possible_directions = [randint(0,60), randint(120,179), randint(180,240), randint(300,359)]
         self.setheading(choice(possible_directions))
         self.color("white")
         self.penup()
