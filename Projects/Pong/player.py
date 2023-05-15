@@ -5,13 +5,14 @@ MOVE_DISTANCE = 20
 
 class Player(Turtle):
 
-    def __init__(self):
+    def __init__(self, location):
         super().__init__()
         self.shape("square")
         self.speed(0)
         self.shapesize(stretch_wid=5, stretch_len=1)
         self.color("white")
         self.penup()
+        self.goto(location)
 
     def move_up(self):
         self.sety(self.ycor() + MOVE_DISTANCE)

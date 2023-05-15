@@ -23,10 +23,8 @@ for _ in range(20):
     lines.fd(15)
     lines.pendown()
 
-p1 = Player()
-p1.goto(P1_START)
-p2 = Player()
-p2.goto(P2_START)
+p1 = Player(P1_START)
+p2 = Player(P2_START)
 
 
 screen.listen()
