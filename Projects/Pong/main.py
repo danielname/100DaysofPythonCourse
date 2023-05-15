@@ -46,11 +46,15 @@ while True:
     # wall collision
     if ball.ycor() > 290 or ball.ycor() < -290:
         ball.wall_bounce()
-    # miss reset
+    # left miss
     if ball.xcor() < -400:
         ball.reset_position()
+        score.r_point()
+
+    # right miss
     if ball.xcor() > 400:
         ball.reset_position()
+        score.l_point()
 
 
 screen.exitonclick()
