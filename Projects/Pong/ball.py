@@ -13,10 +13,16 @@ class Ball(Turtle):
         self.speed(1)
 
     def wall_bounce(self):
+        self.speed(0)
         self.setheading(360 - self.heading())
+        self.speed(1)
 
     def paddle_bounce(self):
         if self.heading() <= 180:
+            self.speed(0)
             self.setheading(180 - self.heading())
+            self.speed(1)
         else:
+            self.speed(0)
             self.setheading(540 - self.heading())
+            self.speed(1)
