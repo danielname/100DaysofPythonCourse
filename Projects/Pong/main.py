@@ -38,9 +38,17 @@ screen.onkey(p2.move_down, "Down")
 screen.tracer(1)
 while True:
     ball.fd(10)
-    if (ball.xcor() == -340 and ball.distance(p1) < 50) or (ball.xcor() == 340 and ball.distance(p2) < 50):
+    # paddle collision
+    if (-340 >= ball.xcor() >= -345 and ball.distance(p1) < 50) or (345 >= ball.xcor() >= 340 and ball.distance(p2) < 50):
         ball.paddle_bounce()
+    # wall collision
     if ball.ycor() > 290 or ball.ycor() < -290:
         ball.wall_bounce()
+    # miss reset
+    if ball.xcor() < -400:
+        ball.reset_position()
+    if ball.xcor() > 400:
+        ball.reset_position()
+
 
 screen.exitonclick()

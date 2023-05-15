@@ -26,3 +26,9 @@ class Ball(Turtle):
             self.speed(0)
             self.setheading(540 - self.heading())
             self.speed(1)
+
+    def reset_position(self):
+        self.speed(0)
+        self.goto(0, 0)
+        self.paddle_bounce()
+        self.speed(1)
