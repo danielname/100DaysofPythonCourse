@@ -38,7 +38,9 @@ screen.onkey(p2.move_up, "Up")
 screen.onkey(p2.move_down, "Down")
 
 screen.tracer(1)
-while True:
+
+game = True
+while game:
     ball.fd(10)
     # paddle collision
     if (-340 >= ball.xcor() >= -345 and ball.distance(p1) < 50) or (345 >= ball.xcor() >= 340 and ball.distance(p2) < 50):
@@ -50,11 +52,15 @@ while True:
     if ball.xcor() < -400:
         ball.reset_position()
         score.r_point()
+        if score.r_score == 7:
+            game = False
 
     # right miss
     if ball.xcor() > 400:
         ball.reset_position()
         score.l_point()
+        if score.l_score == 7:
+            game = False
 
 
 screen.exitonclick()
