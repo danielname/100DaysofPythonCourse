@@ -43,7 +43,7 @@ game = True
 while game:
     ball.fd(10)
     # paddle collision
-    if (-340 >= ball.xcor() >= -345 and ball.distance(p1) < 50) or (345 >= ball.xcor() >= 340 and ball.distance(p2) < 50):
+    if (-340 >= ball.xcor() and ball.distance(p1) < 50) or (ball.xcor() >= 340 and ball.distance(p2) < 50):
         ball.paddle_bounce()
     # wall collision
     if ball.ycor() > 290 or ball.ycor() < -290:

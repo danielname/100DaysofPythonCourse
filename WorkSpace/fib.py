@@ -1,3 +1,5 @@
+import sys
+
 def fib(n):
     starter = [0, 1]
     if n > 1:
@@ -6,4 +8,3 @@ def fib(n):
     print(starter[n])
 
 
-fib(4)
