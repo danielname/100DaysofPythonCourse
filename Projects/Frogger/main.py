@@ -10,6 +10,7 @@ screen.tracer(0)
 
 player = Player()
 score = Scoreboard()
+cars = CarManager()
 
 screen.listen()
 screen.onkey(player.hop,"Up")
