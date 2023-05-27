@@ -29,3 +29,6 @@ class CarManager:
             car.forward(self.driving_speed)
             if car.xcor() < -320:
                 car.goto(320, car.ycor())
+
+    def accelerate(self):
+        self.driving_speed += MOVE_INCREMENT

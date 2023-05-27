@@ -22,4 +22,5 @@ while game_is_on:
     if player.ycor() > 290:
         player.starting_line()
         score.level_up()
+        cars.accelerate()
     cars.drive()
