@@ -24,3 +24,8 @@ while game_is_on:
         score.level_up()
         cars.accelerate()
     cars.drive()
+    for car in cars.cars:
+        if player.distance(car) < 15:
+            game_is_on = False
+
+screen.exitonclick()
