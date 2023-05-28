@@ -35,13 +35,13 @@ while game:
         score.update()
 # game over on wall
     if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 290 or snake.head.ycor() < -290:
-        game = False
         score.game_over()
+        snake.reset()
 # game over on tail
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
-            game = False
             score.game_over()
+            snake.reset()
 
 
 screen.exitonclick()
