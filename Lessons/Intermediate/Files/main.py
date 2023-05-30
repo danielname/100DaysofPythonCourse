@@ -15,4 +15,8 @@ with open("my_file.txt", mode="w") as file:
 
 # appending to a file with mode="a"
 with open("my_file.txt", mode="a") as file:
-    file.write("Adding some new text")
+    file.write("\ndfghblakshnbfgkadsAdding some new text")
+
+    # If you try to open a file in write mode that doesnt exist, then python will create that file from scratch
+with open("big_loser.txt", mode="w") as file:
+    file.write("I feel like a winner")
