@@ -15,4 +15,11 @@
 import pandas
 
 data = pandas.read_csv("weather_data.csv")
-print(data["temp"])
+# print(type(data)) #this is a dataframe
+# print(type(data["temp"])) #this is a series
+
+# data_dict = data.to_dict()
+# print(data_dict)
+
+temp_list = data["temp"].to_list()
+print(temp_list)
