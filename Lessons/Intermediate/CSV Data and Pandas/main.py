@@ -38,3 +38,9 @@ print(data[data.day == "Monday"])
 
 # challenge - pull data from row when temp was max
 print(data[data.temp == data.temp.max()])
+
+# accessing specific datum in a row
+monday = data[data.day == "Monday"]
+print(monday.condition)
+
+print(int(monday.temp) * 9 / 5 + 32)
