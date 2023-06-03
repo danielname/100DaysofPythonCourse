@@ -25,3 +25,6 @@ temp_list = data["temp"].to_list()
 # channlenge: claculate the average temp in this time period
 print(sum(temp_list) / len(temp_list))
 print(temp_list)
+print(data["temp"].mean())
+
+print(data["temp"].max())
