@@ -28,3 +28,10 @@ print(temp_list)
 print(data["temp"].mean())
 
 print(data["temp"].max())
+
+# accessing data in column
+print(data["condition"])
+print(data.condition)
+
+# accessing data in row
+print(data[data.day == "Monday"])
