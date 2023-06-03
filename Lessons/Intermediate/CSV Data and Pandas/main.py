@@ -22,4 +22,9 @@ data = pandas.read_csv("weather_data.csv")
 # print(data_dict)
 
 temp_list = data["temp"].to_list()
+# channlenge: claculate the average temp in this time period
+temp_sum = 0
+for number in temp_list:
+    temp_sum += number
+print(temp_sum / len(temp_list))
 print(temp_list)
