@@ -35,3 +35,6 @@ print(data.condition)
 
 # accessing data in row
 print(data[data.day == "Monday"])
+
+# challenge - pull data from row when temp was max
+print(data[data.temp == data.temp.max()])
