@@ -1,4 +1,5 @@
 import turtle
+import pandas
 
 screen = turtle.Screen()
 screen.title("U.S. States Game")
@@ -8,4 +9,4 @@ screen.addshape(image)
 turtle.shape(image)
 
 
-screen.exitonclick()
+state_guess = screen.textinput("Guess a state", "Name another state: ")
