@@ -9,7 +9,7 @@ screen.addshape(image)
 
 turtle.shape(image)
 
-writer = turtle.Turtle(visible=False)
+pen = writer.Writer()
 
 
 states_data = pandas.read_csv("50_states.csv")
@@ -19,8 +19,8 @@ state_guess = screen.textinput("Guess a state", "Name another state: ")
 
 
 if state_guess in states_data.state:
-    x = states_data.state.state_guess.x
-    y = states_data.state.state_guess.y
+    pen.x = states_data.state.state_guess.x
+    pen.y = states_data.state.state_guess.y
 
 
 screen.exitonclick()
