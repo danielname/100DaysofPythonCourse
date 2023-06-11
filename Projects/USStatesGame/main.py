@@ -19,7 +19,7 @@ state_guess = screen.textinput("Guess a state", "Name another state: ").title()
 game = True
 while game:
 
-    if states_data[states_data.state == state_guess].index > 0:
+    if states_data[states_data.state == state_guess].index > -1: #something is wrong with this. If i make an error it bugs out.
         pen.x = states_data[states_data.state == state_guess]["x"].max()
         pen.y = states_data[states_data.state == state_guess]["y"].max()
         pen.write_state(state_guess)
