@@ -14,7 +14,7 @@
 
 import pandas
 
-# data = pandas.read_csv("weather_data.csv")
+data = pandas.read_csv("weather_data.csv")
 # print(type(data)) #this is a dataframe
 # print(type(data["temp"])) #this is a series
 
@@ -33,8 +33,8 @@ import pandas
 # print(data["condition"])
 # print(data.condition)
 #
-# # accessing data in row
-# print(data[data.day == "Monday"])
+# accessing data in row
+print(data[data.day == "Monday"])
 #
 # # challenge - pull data from row when temp was max
 # print(data[data.temp == data.temp.max()])
@@ -57,18 +57,18 @@ import pandas
 # # creating a new csv file
 # new_data.to_csv("new_data.csv")
 
-squirrel_fur = {
-    "color": ["gray", "cinnamon", "black"],
-    "count": [0, 0, 0]
-}
-
-squirrel_data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
-gray = squirrel_data[squirrel_data["Primary Fur Color"] == "Gray"].count().X
-squirrel_fur["count"][0] = gray
-cinnamon = squirrel_data[squirrel_data["Primary Fur Color"] == "Cinnamon"].count().X
-squirrel_fur["count"][1] = cinnamon
-black = squirrel_data[squirrel_data["Primary Fur Color"] == "Black"].count().X
-squirrel_fur["count"][2] = black
-
-squirrel_csv = pandas.DataFrame(squirrel_fur)
-squirrel_csv.to_csv("squirrel_count.csv")
+# squirrel_fur = {
+#     "color": ["gray", "cinnamon", "black"],
+#     "count": [0, 0, 0]
+# }
+#
+# squirrel_data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+# gray = squirrel_data[squirrel_data["Primary Fur Color"] == "Gray"].count().X
+# squirrel_fur["count"][0] = gray
+# cinnamon = squirrel_data[squirrel_data["Primary Fur Color"] == "Cinnamon"].count().X
+# squirrel_fur["count"][1] = cinnamon
+# black = squirrel_data[squirrel_data["Primary Fur Color"] == "Black"].count().X
+# squirrel_fur["count"][2] = black
+#
+# squirrel_csv = pandas.DataFrame(squirrel_fur)
+# squirrel_csv.to_csv("squirrel_count.csv")

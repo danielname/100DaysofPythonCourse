@@ -14,13 +14,19 @@ pen = writer.Writer()
 
 states_data = pandas.read_csv("50_states.csv")
 
-state_guess = screen.textinput("Guess a state", "Name another state: ")
+state_guess = screen.textinput("Guess a state", "Name another state: ").title()
 
+game = True
+while game:
 
+    if states_data[states_data.state == state_guess].index > 0:
+        pen.x = states_data[states_data.state == state_guess]["x"].max()
+        pen.y = states_data[states_data.state == state_guess]["y"].max()
+        pen.write_state(state_guess)
+        state_guess = screen.textinput("Guess a state", "Name another state: ").title()
 
-if state_guess in states_data.state:
-    pen.x = states_data.state.state_guess.x
-    pen.y = states_data.state.state_guess.y
+    else:
+        state_guess = screen.textinput("Guess a state", "Name another state: ")
 
 
 screen.exitonclick()
