@@ -17,13 +17,13 @@ num_list = []
 password_list = []
 
 for letter in range(0,pass_lower_letters):
-    lo_letter_list.append(lower_letters[random.randint(0,len(lower_letters) - 1)])
+    lo_letter_list.append(lower_letters[random.randint(len(lower_letters) - 1)])
 for letter in range(0,pass_upper_letters):
-    up_letter_list.append(upper_letters[random.randint(0,len(upper_letters) - 1)])
+    up_letter_list.append(upper_letters[random.randint(len(upper_letters) - 1)])
 for symbol in range(0,pass_symbols):
-    sym_list.append(symbols[random.randint(0,len(symbols) - 1)])
+    sym_list.append(symbols[random.randint(len(symbols) - 1)])
 for symbol in range(0,pass_numbers):
-    num_list.append(numbers[random.randint(0,len(numbers) - 1)])
+    num_list.append(numbers[random.randint(len(numbers) - 1)])
 
 lists = lo_letter_list
 lists.extend(up_letter_list)
