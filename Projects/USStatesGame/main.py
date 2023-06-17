@@ -18,7 +18,8 @@ state_guess = screen.textinput("Guess a state", "Name another state: ").title()
 
 game = True
 while game:
-
+    if state_guess == "Exit":
+        break
     if states_data[states_data.state == state_guess].notnull:
         pen.x = states_data[states_data.state == state_guess]["x"].max()
         pen.y = states_data[states_data.state == state_guess]["y"].max()
@@ -26,7 +27,7 @@ while game:
         state_guess = screen.textinput("Guess a state", "Name another state: ").title()
 
     else:
-        state_guess = screen.textinput("Guess a state", "Name another state: ")
+        state_guess = screen.textinput("Guess a state", "Name another state: ").title()
 
 
 screen.exitonclick()
