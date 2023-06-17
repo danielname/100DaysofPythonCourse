@@ -20,7 +20,9 @@ state_guess = screen.textinput("Guess a state", "Name another state: ").title()
 game = True
 while game:
     if state_guess == "Exit":
-
+        data_dict = {"state": state_list}
+        study = pandas.DataFrame(data_dict)
+        study.to_csv("state_study_list.csv")
         break
     if state_guess in state_list:
         pen.x = states_data[states_data.state == state_guess]["x"].max()
@@ -33,3 +35,6 @@ while game:
 
 
 screen.exitonclick()
+
+#make a hint button/command that access the remaining states
+#count that shows how many are correct
