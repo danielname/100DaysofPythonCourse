@@ -14,7 +14,7 @@ for color in range(len(colors)):
 # Make a 10 x 10 painting
 # each dot has a radius of 20
 # gap between is 50
-hirst = Turtle()
+hirst = Turtle(visible=False)
 hirst.speed("fastest")
 screen = Screen()
 screen.colormode(255)
