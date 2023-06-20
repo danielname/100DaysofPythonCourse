@@ -1,3 +1,4 @@
+import random
 import turtle
 import writer
 import pandas
@@ -18,12 +19,20 @@ hit_list = []
 state_guess = screen.textinput("Guess a state", "Name another state: ").title()
 
 game = True
+hints_remaining = 2
 while game:
     if state_guess == "Exit":
         data_dict = {"state": state_list}
         study = pandas.DataFrame(data_dict)
         study.to_csv("state_study_list.csv")
         break
+    if state_guess == "Hint":
+        if hints_remaining > 0:
+            hints_remaining -= 1
+            hint = random.choice(state_list)[0]
+            state_guess = screen.textinput("Guess a state", f"Starts with a(n): {hint}").title()
+        else:
+            state_guess = screen.textinput("No Hints Left", "Name another state: ").title()
     if state_guess in state_list:
         pen.x = states_data[states_data.state == state_guess]["x"].max()
         pen.y = states_data[states_data.state == state_guess]["y"].max()
@@ -36,5 +45,4 @@ while game:
 
 screen.exitonclick()
 
-#make a hint button/command that access the remaining states
 #count that shows how many are correct
