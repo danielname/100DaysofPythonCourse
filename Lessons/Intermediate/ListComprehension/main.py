@@ -10,3 +10,7 @@ print(new_list)
 name = "Daniel"
 new_list = [letter for letter in name]
 print(new_list)
+
+my_range = range(1,5)
+new_range = [n * 2 for n in my_range]
+print(new_range)
