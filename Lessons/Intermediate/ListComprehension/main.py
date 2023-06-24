@@ -54,3 +54,25 @@ result = [n for n in numbers if n % 2 == 0]
 
 print(result)
 
+# Exercise 26-3
+#Take a look inside file1.txt and file2.txt. They each contain a bunch of numbers, each number on a new line.
+
+# You are going to create a list called result which contains the numbers that are common in both files.
+
+with open("file1.txt") as file:
+        numlist1 = file.read()
+        num_list = numlist1.split("\n")
+        number_list = [int(number) for number in num_list if len(number) > 0]
+
+with open("file2.txt") as file:
+    numlist2 = file.read()
+    num_lis2 = numlist2.split("\n")
+    number_list2 = [int(number) for number in num_lis2 if len(number) > 0]
+
+result = [n for n in number_list if n in number_list2]
+
+# Write your code above 👆
+
+print(result)
+
+
