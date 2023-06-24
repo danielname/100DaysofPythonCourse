@@ -60,13 +60,11 @@ print(result)
 # You are going to create a list called result which contains the numbers that are common in both files.
 
 with open("file1.txt") as file:
-        numlist1 = file.read()
-        num_list = numlist1.split("\n")
+        numlist1 = file.readlines()
         number_list = [int(number) for number in num_list if len(number) > 0]
 
 with open("file2.txt") as file:
-    numlist2 = file.read()
-    num_lis2 = numlist2.split("\n")
+    numlist2 = file.readlines()
     number_list2 = [int(number) for number in num_lis2 if len(number) > 0]
 
 result = [n for n in number_list if n in number_list2]
