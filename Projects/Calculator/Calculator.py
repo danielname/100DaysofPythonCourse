@@ -1,8 +1,11 @@
 from art import logo
 print(logo)
-def add (n1, n2):
+def add (*args):
     """Adds two inputs together"""
-    return n1 + n2
+    sum = 0
+    for n in args:
+        sum += n
+    return sum
 def subtract(n1, n2):
     """Subtracts the first input minus the second input"""
     return n1 - n2
