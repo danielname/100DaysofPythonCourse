@@ -14,13 +14,14 @@ my_label.config(text="Not a label")
 
 
 def button_clicked():
-    my_label.config(text="Button Clicked")
+    my_label.config(text=my_input.get())
 
 button = tkinter.Button(text="Click me", command=button_clicked)
 button.pack(side="right")
 
 
-
+my_input = tkinter.Entry(width=10)
+my_input.pack()
 
 
 
