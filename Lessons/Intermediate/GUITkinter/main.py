@@ -13,7 +13,10 @@ my_label.pack(side="left")
 my_label.config(text="Not a label")
 
 
-button = tkinter.Button(text="Click me")
+def button_clicked():
+    my_label.config(text="Button Clicked")
+
+button = tkinter.Button(text="Click me", command=button_clicked)
 button.pack(side="right")
 
 
