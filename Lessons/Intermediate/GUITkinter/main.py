@@ -13,6 +13,8 @@ my_label.pack(side="left")
 my_label.config(text="Not a label")
 
 
+button = tkinter.Button(text="Click me")
+button.pack(side="right")
 
 
 
