@@ -1,5 +1,12 @@
 from art import logo
 print(logo)
+def calculate(n, **kwargs):
+    n += kwargs["add"]
+    n -= kwargs["subtract"]
+    n *= kwargs["multiply"]
+    n /= kwargs["divide"]
+    return n
+
 def add (*args):
     """Adds two inputs together"""
     sum = 0
