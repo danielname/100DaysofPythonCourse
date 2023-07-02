@@ -21,7 +21,7 @@ button.pack(side="right")
 
 
 my_input = tkinter.Entry(width=10)
-my_input.pack()
+my_input.place(x=0, y=0)
 
 
 
