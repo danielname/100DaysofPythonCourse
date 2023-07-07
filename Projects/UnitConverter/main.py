@@ -10,6 +10,12 @@ def calculate_km_mi():
 def calculate_mi_km():
     conversion.config(text=str(float(num_box.get()) * KM_TO_MI))
 
+def calculate_f_c():
+    conversion.config(text=str((float(num_box.get()) - 32) * 5/9))
+
+def calculate_c_f():
+    conversion.config(text=str(float(num_box.get()) * 9/5 + 32))
+
 def radio_used_1():
     unit_1.config(text="Miles")
     unit_2.config(text="Km")
@@ -22,6 +28,18 @@ def radio_used_2():
     conversion.config(text="0")
     calc_btn.config(command=calculate_mi_km)
 
+def radio_used_3():
+    unit_1.config(text="Fahrenheit")
+    unit_2.config(text="Celsius")
+    conversion.config(text="0")
+    calc_btn.config(command=calculate_f_c)
+
+def radio_used_4():
+    unit_1.config(text="Celsius")
+    unit_2.config(text="Fahrenheit")
+    conversion.config(text="0")
+    calc_btn.config(command=calculate_c_f)
+
 window = Tk()
 window.config(padx=20, pady=20)
 window.minsize(width=300, height=200)
@@ -29,8 +47,12 @@ window.minsize(width=300, height=200)
 radio_state = IntVar()
 mi_km_select = Radiobutton(text="mi to km", value=1, variable=radio_state, command=radio_used_1)
 km_mi_select = Radiobutton(text="km to mi", value=2, variable=radio_state, command=radio_used_2)
+f_c_select = Radiobutton(text="fahrenheit to celsius", value=3, variable=radio_state, command=radio_used_3)
+c_f_select = Radiobutton(text="celsius to fahrenheit", value=4, variable=radio_state, command=radio_used_4)
 mi_km_select.grid(column=3, row=0)
 km_mi_select.grid(column=3, row=1)
+f_c_select.grid(column=3, row=2)
+c_f_select.grid(column=3, row=3)
 
 unit_1 = Label(text="Miles")
 unit_1.grid(column=2, row=0)
