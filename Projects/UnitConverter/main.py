@@ -61,6 +61,7 @@ def radio_used_6():
     calc_btn.config(command=calculate_lit_gal)
 
 window = Tk()
+window.title("Unit Converter")
 window.config(padx=20, pady=20)
 window.minsize(width=300, height=200)
 
