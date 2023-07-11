@@ -20,11 +20,22 @@ window = Tk()
 window.title("Pomodoro Timer")
 window.config(pady=50, padx=100, bg=BLUE)
 
+timer_label = Label(text="Timer", font=(FONT_NAME, 45, "bold"), fg=GREEN, bg=BLUE)
+timer_label.grid(column=1, row=0)
+
 canvas = Canvas(width=200, height=224, bg=BLUE, highlightthickness=0)
 tomato_img = PhotoImage(file="tomato.png")
 canvas.create_image(100,112, image=tomato_img)
 canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
-canvas.pack()
+canvas.grid(column=1, row=1)
 
+start_button = Button(text="Start")
+start_button.grid(column=0, row=2)
+
+reset_button = Button(text="Reset")
+reset_button.grid(column=2, row=2)
+
+check_space = Label(text="")
+check_space.grid(column=1, row=3)
 
 window.mainloop()
