@@ -23,10 +23,18 @@ def start_timer():
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
 def countdown(count):
-    formatted_count = str(count // 60) + ":" + str(count % 60)
-    canvas.itemconfig(timer_text, text=formatted_count)
+    count_min = count // 60
+    count_sec = count % 60
+
+    if count_min < 10:
+        count_min = f"0{count_min}"
+
+    if count_sec < 10:
+        count_sec = f"0{count_sec}"
+
+    canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
-        window.after(1000, countdown, count - 1)
+        window.after(10, countdown, int(count) - 1)
 
 
 
