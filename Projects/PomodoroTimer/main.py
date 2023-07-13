@@ -17,15 +17,15 @@ LONG_BREAK_MIN = 20
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
-    countdown(1500, 0)
+    countdown(1500, 0, "")
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
-def countdown(count, reps):
+def countdown(count, reps, checks):
     count_min = count // 60
     count_sec = count % 60
-
+    check_space.config(text=checks)
     if count_min < 10:
         count_min = f"0{count_min}"
 
@@ -34,13 +34,13 @@ def countdown(count, reps):
 
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
-        window.after(5, countdown, int(count) - 1, reps)
+        window.after(2, countdown, int(count) - 1, reps, checks)
     elif reps % 2 == 0:
         reps += 1
-        window.after(5, countdown, 300, reps)
+        window.after(5, countdown, 300, reps, checks + "✔")
     else:
         reps += 1
-        window.after(5, countdown, 1500, reps)
+        window.after(5, countdown, 1500, reps, checks)
 
 
 
