@@ -24,15 +24,17 @@ def reset_timer():
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
     timer_label.config(text="Work")
-    countdown(1500, 0, "")
+    countdown(1500, 0, "", 0)
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
-def countdown(count, reps, checks):
+def countdown(count, reps, checks, cycles):
     count_min = count // 60
     count_sec = count % 60
     check_space.config(text=checks)
+
+
     if count_min < 10:
         count_min = f"0{count_min}"
 
@@ -42,15 +44,20 @@ def countdown(count, reps, checks):
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
         global timer
-        timer = window.after(2, countdown, int(count) - 1, reps, checks)
+        timer = window.after(2, countdown, int(count) - 1, reps, checks, cycles)
+    elif reps == 6:
+        reps = -1
+        cycles += 1
+        timer_label.config(text="Long Break")
+        timer = window.after(5, countdown, 1200, reps, checks + "✔", cycles)
     elif reps % 2 == 0:
         reps += 1
         timer_label.config(text="Break")
-        timer = window.after(5, countdown, 300, reps, checks + "✔")
+        timer = window.after(5, countdown, 300, reps, checks + "✔", cycles)
     else:
         reps += 1
         timer_label.config(text="Work")
-        timer = window.after(5, countdown, 1500, reps, checks)
+        timer = window.after(5, countdown, 1500, reps, checks, cycles)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
