@@ -37,9 +37,11 @@ def countdown(count, reps, checks):
         window.after(2, countdown, int(count) - 1, reps, checks)
     elif reps % 2 == 0:
         reps += 1
+        timer_label.config(text="Break")
         window.after(5, countdown, 300, reps, checks + "✔")
     else:
         reps += 1
+        timer_label.config(text="Timer")
         window.after(5, countdown, 1500, reps, checks)
 
 
