@@ -17,6 +17,7 @@ LONG_BREAK_MIN = 20
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
+    timer_label.config(text="Work")
     countdown(1500, 0, "")
 
 
@@ -41,7 +42,7 @@ def countdown(count, reps, checks):
         window.after(5, countdown, 300, reps, checks + "✔")
     else:
         reps += 1
-        timer_label.config(text="Timer")
+        timer_label.config(text="Work")
         window.after(5, countdown, 1500, reps, checks)
 
 
