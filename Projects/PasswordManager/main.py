@@ -14,5 +14,16 @@ lock_image = PhotoImage(file="logo.png")
 lock_canvas.create_image(100, 100, image=lock_image)
 lock_canvas.grid(column=0, row=0)
 
+website_label = Label()
+website_input = Entry()
+
+email_label = Label()
+email_input = Entry()
+
+pw_label = Label()
+pw_input = Entry()
+pw_button = Button()
+
+add_button = Button()
 
 window.mainloop()
