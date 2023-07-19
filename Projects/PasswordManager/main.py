@@ -26,6 +26,7 @@ email_label.grid(column=0, row=2)
 
 email_input = Entry(width=35, justify="left")
 email_input.grid(column=1, columnspan=2, row=2)
+email_input.insert(0, "myemail@email.com")
 
 pw_label = Label(text="Password:")
 pw_label.grid(column=0, row=3)
