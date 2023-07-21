@@ -1,8 +1,15 @@
 from tkinter import *
 
+
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+def add_press():
+    # need to get values from each of the input spaces
+    # need to make and append info to txt file
+    # need to clear all input sections
+    pass
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -38,7 +45,7 @@ pw_button = Button(text="Generate Password", justify="left")
 pw_button.config(padx=0)
 pw_button.grid(column=2, row=3)
 
-add_button = Button(text="Add", width=36)
+add_button = Button(text="Add", width=36, command=add_press)
 add_button.grid(column=1, columnspan=2, row=4)
 
 window.mainloop()
