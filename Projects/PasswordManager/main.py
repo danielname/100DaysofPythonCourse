@@ -5,7 +5,10 @@ from tkinter import *
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def add_press():
-    # need to get values from each of the input spaces
+    web_text = website_input.get()
+    email_text = email_input.get()
+    pw_text = pw_input.get()
+
     # need to make and append info to txt file
     # need to clear all input sections
     pass
