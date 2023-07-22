@@ -1,4 +1,5 @@
 from tkinter import *
+import pandas
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -9,7 +10,16 @@ def add_press():
     email_text = email_input.get()
     pw_text = pw_input.get()
 
+    # make dataframe
+    passwrord_dict = {
+        "website": [web_text],
+        "email": [email_text],
+        "password": [pw_text]
+    }
+
     # need to make and append info to txt file
+
+
     # need to clear all input sections
     pass
 
