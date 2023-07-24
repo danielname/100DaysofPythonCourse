@@ -17,6 +17,9 @@ def add_press():
         "password": [pw_text]
     }
 
+    password_csv = pandas.DataFrame(passwrord_dict)
+    password_csv.to_csv("password_list.csv")
+
     # need to make and append info to txt file
 
 
