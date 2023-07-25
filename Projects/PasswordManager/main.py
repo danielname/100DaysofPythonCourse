@@ -24,8 +24,9 @@ def add_press():
 
 
     # need to clear all input sections
-    pass
-
+    website_input.delete(0,len(website_input.get()))
+    email_input.delete(0,len(email_input.get()))
+    pw_input.delete(0,len(pw_input.get()))
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
