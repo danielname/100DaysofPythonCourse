@@ -18,7 +18,9 @@ def add_press():
     pw_text = pw_input.get()
 
     # make dataframe
-
+    password_dict["website"] += web_text #this doesnt work. have to assign values to the next index
+    password_dict["email"] += email_text
+    password_dict["password"] += pw_text
 
     password_csv = pandas.DataFrame(passwrord_dict)
     password_csv.to_csv("password_list.csv")
