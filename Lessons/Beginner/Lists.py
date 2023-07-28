@@ -2,6 +2,7 @@
 fruits = ["apple", "pear", "cherry"]
 print(fruits[1])
 print(fruits[-1])
+print(len(fruits))
 fruits[0] = "lettuce"
 print(fruits[0])
 fruits.append("orange")
