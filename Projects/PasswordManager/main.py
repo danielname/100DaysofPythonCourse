@@ -7,7 +7,7 @@ password_dict = data.to_dict() #{
 #     "email": [email_text],
 #     "password": [pw_text]
 # }
-
+print(password_dict)
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
