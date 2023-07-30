@@ -3,18 +3,13 @@ import pandas
 
 try:
     data = pandas.read_csv("password_list.csv")
-    password_dict = data.to_dict() #{
-#     "website": [web_text],
-#     "email": [email_text],
-#     "password": [pw_text]
-# }
+    password_dict = data.to_dict()
 except:
     with open("password_list.csv", mode="w") as file:
         file.write("website,email,password")
     data = pandas.read_csv("password_list.csv")
     password_dict = data.to_dict()
 
-print(password_dict)
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -29,7 +24,13 @@ def add_press():
     password_dict["email"][len(password_dict["email"])] = email_text
     password_dict["password"][len(password_dict["password"])] = pw_text
 
-    password_csv = pandas.DataFrame(password_dict)
+    new_dict = {
+        "website": password_dict["website"],
+        "email": password_dict["email"],
+        "password": password_dict["password"]
+    }
+
+    password_csv = pandas.DataFrame(new_dict)
     password_csv.to_csv("password_list.csv")
 
     # need to make and append info to txt file
