@@ -1,12 +1,19 @@
 from tkinter import *
 import pandas
 
-data = pandas.read_csv("password_list.csv")
-password_dict = data.to_dict() #{
+try:
+    data = pandas.read_csv("password_list.csv")
+    password_dict = data.to_dict() #{
 #     "website": [web_text],
 #     "email": [email_text],
 #     "password": [pw_text]
 # }
+except:
+    with open("password_list.csv", mode="w") as file:
+        file.write("website,email,password")
+    data = pandas.read_csv("password_list.csv")
+    password_dict = data.to_dict()
+
 print(password_dict)
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
