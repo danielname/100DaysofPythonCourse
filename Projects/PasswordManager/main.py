@@ -14,7 +14,7 @@ except:
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
-def add_press():
+def save():
     web_text = website_input.get()
     email_text = email_input.get()
     pw_text = pw_input.get()
@@ -37,9 +37,9 @@ def add_press():
 
 
     # need to clear all input sections
-    website_input.delete(0,len(website_input.get()))
-    email_input.delete(0,len(email_input.get()))
-    pw_input.delete(0,len(pw_input.get()))
+    website_input.delete(0, END)
+    email_input.delete(0, END)
+    pw_input.delete(0, END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -75,7 +75,7 @@ pw_button = Button(text="Generate Password", justify="left")
 pw_button.config(padx=0)
 pw_button.grid(column=2, row=3)
 
-add_button = Button(text="Add", width=36, command=add_press)
+add_button = Button(text="Add", width=36, command=save)
 add_button.grid(column=1, columnspan=2, row=4)
 
 window.mainloop()
