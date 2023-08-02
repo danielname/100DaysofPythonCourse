@@ -20,30 +20,33 @@ def save():
     email_text = email_input.get()
     pw_text = pw_input.get()
 
-    is_ok = messagebox.askokcancel(title=web_text, message=f"The details entered are:\nEmail: {email_text}"
-                                                   f"\nPassword: {pw_text}\nIs it ok to save?")
-    if is_ok:
-        # make dataframe
-        password_dict["website"][len(password_dict["website"])] = web_text #this mostly works. It seems there is an unnamed column being built every iteration.
-        password_dict["email"][len(password_dict["email"])] = email_text
-        password_dict["password"][len(password_dict["password"])] = pw_text
+    if web_text != "" and email_text != "" and pw_text != "":
+        is_ok = messagebox.askokcancel(title=web_text, message=f"The details entered are:\nEmail: {email_text}"
+                                                       f"\nPassword: {pw_text}\nIs it ok to save?")
+        if is_ok:
+            # make dataframe
+            password_dict["website"][len(password_dict["website"])] = web_text #this mostly works. It seems there is an unnamed column being built every iteration.
+            password_dict["email"][len(password_dict["email"])] = email_text
+            password_dict["password"][len(password_dict["password"])] = pw_text
 
-        new_dict = {
-            "website": password_dict["website"],
-            "email": password_dict["email"],
-            "password": password_dict["password"]
-        }
+            new_dict = {
+                "website": password_dict["website"],
+                "email": password_dict["email"],
+                "password": password_dict["password"]
+            }
 
-        password_csv = pandas.DataFrame(new_dict)
-        password_csv.to_csv("password_list.csv")
+            password_csv = pandas.DataFrame(new_dict)
+            password_csv.to_csv("password_list.csv")
 
-        # need to make and append info to txt file
+            # need to make and append info to txt file
 
 
-        # need to clear all input sections
-        website_input.delete(0, END)
-        email_input.delete(0, END)
-        pw_input.delete(0, END)
+            # need to clear all input sections
+            website_input.delete(0, END)
+            email_input.delete(0, END)
+            pw_input.delete(0, END)
+    else:
+        messagebox.showerror(title="Error: Empty Field", message="Please don't leave any fields empty")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
