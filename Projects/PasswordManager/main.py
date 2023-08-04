@@ -13,6 +13,39 @@ except:
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+import random
+def generate_pw():
+    lower_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    upper_letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+    lo_letter_list = []
+    up_letter_list = []
+    sym_list = []
+    num_list = []
+
+    password_list = []
+
+    for letter in range(4):
+        lo_letter_list.append(lower_letters[random.randint(0, len(lower_letters) - 1)])
+    for letter in range(4):
+        up_letter_list.append(upper_letters[random.randint(0, len(upper_letters) - 1)])
+    for symbol in range(2):
+        sym_list.append(symbols[random.randint(0, len(symbols) - 1)])
+    for symbol in range(2):
+        num_list.append(numbers[random.randint(0, len(numbers) - 1)])
+
+    lists = lo_letter_list
+    lists.extend(up_letter_list)
+    lists.extend(sym_list)
+    lists.extend(num_list)
+    for char in range(12):
+        ran_index = random.randint(0, len(lists) - 1)
+        password_list.append(lists[ran_index])
+        lists.pop(ran_index)
+    password = "".join(password_list)
+    pw_input.insert(0, password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
@@ -79,7 +112,7 @@ pw_label.grid(column=0, row=3)
 pw_input = Entry(width=21, justify="left")
 pw_input.grid(column=1, row=3)
 
-pw_button = Button(text="Generate Password", justify="left")
+pw_button = Button(text="Generate Password", justify="left", command=generate_pw)
 pw_button.config(padx=0)
 pw_button.grid(column=2, row=3)
 
