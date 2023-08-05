@@ -27,14 +27,16 @@ def generate_pw():
 
     password_list = []
 
+    # for letter in range(4):
+    #     lo_letter_list.append(lower_letters[random.randint(0, len(lower_letters) - 1)])
     for letter in range(4):
-        lo_letter_list.append(lower_letters[random.randint(0, len(lower_letters) - 1)])
+        lo_letter_list.append(random.choice(lower_letters))
     for letter in range(4):
-        up_letter_list.append(upper_letters[random.randint(0, len(upper_letters) - 1)])
+        up_letter_list.append(random.choice(upper_letters))
     for symbol in range(2):
-        sym_list.append(symbols[random.randint(0, len(symbols) - 1)])
+        sym_list.append(random.choice(symbols))
     for symbol in range(2):
-        num_list.append(numbers[random.randint(0, len(numbers) - 1)])
+        num_list.append(random.choice(numbers))
 
     lists = lo_letter_list
     lists.extend(up_letter_list)
