@@ -27,8 +27,6 @@ def generate_pw():
 
     password_list = []
 
-    # for letter in range(4):
-    #     lo_letter_list.append(lower_letters[random.randint(0, len(lower_letters) - 1)])
     for letter in range(4):
         lo_letter_list.append(random.choice(lower_letters))
     for letter in range(4):
