@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import pandas
 from random import choice, randint
+import pyperclip
 
 try:
     data = pandas.read_csv("password_list.csv")
@@ -47,6 +48,7 @@ def generate_pw():
         lists.pop(ran_index)
     password = "".join(password_list)
     pw_input.insert(0, password)
+    pyperclip.copy(password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
@@ -71,9 +73,6 @@ def save():
 
             password_csv = pandas.DataFrame(new_dict)
             password_csv.to_csv("password_list.csv")
-
-            # need to make and append info to txt file
-
 
             # need to clear all input sections
             website_input.delete(0, END)
