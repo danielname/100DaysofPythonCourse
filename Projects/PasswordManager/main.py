@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import pandas
+from random import choice, randint
 
 try:
     data = pandas.read_csv("password_list.csv")
@@ -13,7 +14,7 @@ except:
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
-import random
+
 def generate_pw():
     lower_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     upper_letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -28,20 +29,20 @@ def generate_pw():
     password_list = []
 
     for letter in range(4):
-        lo_letter_list.append(random.choice(lower_letters))
+        lo_letter_list.append(choice(lower_letters))
     for letter in range(4):
-        up_letter_list.append(random.choice(upper_letters))
+        up_letter_list.append(choice(upper_letters))
     for symbol in range(2):
-        sym_list.append(random.choice(symbols))
+        sym_list.append(choice(symbols))
     for symbol in range(2):
-        num_list.append(random.choice(numbers))
+        num_list.append(choice(numbers))
 
     lists = lo_letter_list
     lists.extend(up_letter_list)
     lists.extend(sym_list)
     lists.extend(num_list)
     for char in range(12):
-        ran_index = random.randint(0, len(lists) - 1)
+        ran_index = randint(0, len(lists) - 1)
         password_list.append(lists[ran_index])
         lists.pop(ran_index)
     password = "".join(password_list)
