@@ -16,8 +16,8 @@
 
 try:
     file = open("a_file.txt")
-    a_dictionary = {"key": "Value"}
-    value = a_dictionary["not_the_key"]
+    # a_dictionary = {"key": "Value"}
+    # value = a_dictionary["not_the_key"]
 except FileNotFoundError:
     file = open("a_file.txt", "w")
     file.write("something")
@@ -29,3 +29,4 @@ else: #this requires no exceptions in try
 finally:
     file.close()
     print("File was closed.")
+    raise KeyError("Got so many keys you think im valet parking")
