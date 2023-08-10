@@ -14,19 +14,28 @@
 # text = "abc"
 # print(text + 5)
 
-try:
-    file = open("a_file.txt")
-    # a_dictionary = {"key": "Value"}
-    # value = a_dictionary["not_the_key"]
-except FileNotFoundError:
-    file = open("a_file.txt", "w")
-    file.write("something")
-except KeyError as error_message:
-    print(f"the key {error_message} does not exist")
-else: #this requires no exceptions in try
-    content = file.read()
-    print(content)
-finally:
-    file.close()
-    print("File was closed.")
-    raise KeyError("Got so many keys you think im valet parking")
+# try:
+#     file = open("a_file.txt")
+#     # a_dictionary = {"key": "Value"}
+#     # value = a_dictionary["not_the_key"]
+# except FileNotFoundError:
+#     file = open("a_file.txt", "w")
+#     file.write("something")
+# except KeyError as error_message:
+#     print(f"the key {error_message} does not exist")
+# else: #this requires no exceptions in try
+#     content = file.read()
+#     print(content)
+# finally:
+#     file.close()
+#     print("File was closed.")
+#     raise KeyError("Got so many keys you think im valet parking")
+
+height = float(input("height: "))
+weight = int(input("weight: "))
+
+if height > 3:
+    raise ValueError("Human height should not be above 3 meters")
+
+bmi = weight / height ** 2
+print(bmi)
