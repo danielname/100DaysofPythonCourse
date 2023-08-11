@@ -31,11 +31,29 @@
 #     print("File was closed.")
 #     raise KeyError("Got so many keys you think im valet parking")
 
-height = float(input("height: "))
-weight = int(input("weight: "))
+# height = float(input("height: "))
+# weight = int(input("weight: "))
+#
+# if height > 3:
+#     raise ValueError("Human height should not be above 3 meters")
+#
+# bmi = weight / height ** 2
+# print(bmi)
 
-if height > 3:
-    raise ValueError("Human height should not be above 3 meters")
 
-bmi = weight / height ** 2
-print(bmi)
+# Exercise 30-1
+# Use what you've learnt about exception handling to prevent the program from crashing. If the user enters something that is out of range just print a default output of "Fruit pie". e.g.
+
+fruits = ["Apple", "Pear", "Orange"]
+
+#TODO: Catch the exception and make sure the code runs without crashing.
+def make_pie(index):
+    try:
+        fruit = fruits[index]
+    except:
+        print("Fruit pie")
+    else:
+        print(fruit + " pie")
+
+
+make_pie(0)
