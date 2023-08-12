@@ -29,5 +29,14 @@ for (index, row) in nato_data.iterrows():
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
 in_word = input("What word would you like a phonetic spelling of?")
 nato_list = [letter for letter in in_word.upper()]
+nato_word = []
 for letter in nato_list:
-    print(nato_dict[letter])
+    try:
+        nato_word.append(nato_dict[letter])
+    except KeyError:
+        print("Sorry, only letters in the alphabet please")
+        nato_word = ""
+        break
+print(nato_word)
+
+# next to do, make a recursive function on except
