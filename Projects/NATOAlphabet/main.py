@@ -20,23 +20,23 @@ for (index, row) in student_data_frame.iterrows():
 # Keyword Method with iterrows()
 # {new_key:new_value for (index, row) in df.iterrows()}
 
-#TODO 1. Create a dictionary in this format:
 nato_data = pandas.read_csv("nato_phonetic_alphabet.csv")
-nato_dict = {}
-for (index, row) in nato_data.iterrows():
-    nato_dict[row.letter] = row.code
+nato_dict = {row.letter: row.code for (index, row) in nato_data.iterrows()}
 
-#TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-in_word = input("What word would you like a phonetic spelling of?")
-nato_list = [letter for letter in in_word.upper()]
-nato_word = []
-for letter in nato_list:
-    try:
-        nato_word.append(nato_dict[letter])
-    except KeyError:
-        print("Sorry, only letters in the alphabet please")
-        nato_word = ""
-        break
-print(nato_word)
+def create_phonetic():
+    in_word = input("What word would you like a phonetic spelling of?\n")
+    nato_list = [letter for letter in in_word.upper()]
+    nato_word = []
+    for letter in nato_list:
+        try:
+            nato_word.append(nato_dict[letter])
+        except KeyError:
+            print("Sorry, only letters in the alphabet please")
+            nato_word = ""
+            create_phonetic()
+            break
+    print(nato_word)
+
+create_phonetic()
 
 # next to do, make a recursive function on except
