@@ -8,8 +8,10 @@ import pyperclip
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 def generate_pw():
-    lower_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    upper_letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    lower_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+                     'u', 'v', 'w', 'x', 'y', 'z']
+    upper_letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                     'U', 'V', 'W', 'X', 'Y', 'Z']
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
@@ -41,6 +43,7 @@ def generate_pw():
     pw_input.insert(0, password)
     pyperclip.copy(password)
 
+
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
     web_text = website_input.get()
@@ -55,7 +58,7 @@ def save():
 
     if web_text != "" and email_text != "" and pw_text != "":
         is_ok = messagebox.askokcancel(title=web_text, message=f"The details entered are:\nEmail: {email_text}"
-                                                       f"\nPassword: {pw_text}\nIs it ok to save?")
+                                                               f"\nPassword: {pw_text}\nIs it ok to save?")
         if is_ok:
             with open("password_list.json", "w") as data_file:
                 json.dump(new_data, data_file, indent=4)
@@ -66,6 +69,21 @@ def save():
             pw_input.delete(0, END)
     else:
         messagebox.showerror(title="Error: Empty Field", message="Please don't leave any fields empty")
+
+
+# ---------------------------- PASSWORD LOOKUP ------------------------------- #
+def search():
+    data = {}
+    try:
+        with open("password_list.json", "r") as data_file:
+            data = json.load(data_file)
+            email_input.insert(0, data[website_input.get()]["email"])
+            pw_input.insert(0, data[website_input.get()]["password"])
+    except FileNotFoundError:
+        messagebox.showerror(title="Error: No Passwords!", message="Silly goose, you don't have passwords yet!")
+    except KeyError:
+        messagebox.showerror(title="Error: No Passwords For Site!", message="You dont have a passeword for that "
+                                                                            "website yet.")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
