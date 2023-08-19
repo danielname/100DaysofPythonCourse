@@ -87,8 +87,8 @@ def search():
     try:
         with open("password_list.json", "r") as data_file:
             data = json.load(data_file)
-            email_input.insert(0, data[website_input.get()]["email"])
-            pw_input.insert(0, data[website_input.get()]["password"])
+            messagebox.showinfo(title=website_input.get(), message=f"Email: {data[website_input.get()]['email']}\n"
+                                                                   f"Password: {data[website_input.get()]['password']}")
     except FileNotFoundError:
         messagebox.showerror(title="Error: No Passwords!", message="Silly goose, you don't have passwords yet!")
     except KeyError:
@@ -107,9 +107,9 @@ lock_canvas.create_image(100, 100, image=lock_image)
 lock_canvas.grid(column=1, row=0)
 
 website_label = Label(text="Website:", justify="right")
-website_label.grid(column=0, row=1)
+website_label.grid(column=0, row=1, padx=0)
 
-website_input = Entry(width=35, justify="left")
+website_input = Entry(width=21, justify="left")
 website_input.grid(column=1, row=1)
 website_input.focus()
 
@@ -117,10 +117,10 @@ search_button = Button(text="Search", justify="left", command=search)
 search_button.grid(column=2, row=1)
 
 email_label = Label(text="Email/Username:", justify="right")
-email_label.grid(column=0, row=2)
+email_label.grid(column=0, row=2, padx=0)
 
-email_input = Entry(width=35, justify="left")
-email_input.grid(column=1, columnspan=2, row=2)
+email_input = Entry(width=39, justify="left")
+email_input.grid(column=1, columnspan=2, row=2, padx=0)
 email_input.insert(0, "myemail@email.com")
 
 pw_label = Label(text="Password:", justify="right")
@@ -133,7 +133,7 @@ pw_button = Button(text="Generate Password", justify="left", command=generate_pw
 pw_button.config(padx=0)
 pw_button.grid(column=2, row=3)
 
-add_button = Button(text="Add", width=36, command=save)
+add_button = Button(text="Add", width=33, command=save)
 add_button.grid(column=1, columnspan=2, row=4)
 
 window.mainloop()
