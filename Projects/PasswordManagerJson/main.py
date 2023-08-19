@@ -66,7 +66,7 @@ def save():
                     data = json.load(data_file)
                     # Updating old data with new data
                     data.update(new_data)
-            except:
+            except FileNotFoundError:
                 data = new_data
             finally:
                 with open("password_list.json", "w") as data_file:
