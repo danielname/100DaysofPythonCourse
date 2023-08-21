@@ -92,7 +92,7 @@ def search():
     except FileNotFoundError:
         messagebox.showerror(title="Error: No Passwords!", message="Silly goose, you don't have passwords yet!")
     except KeyError:
-        messagebox.showerror(title="Error: No Passwords For Site!", message="You dont have a passeword for that "
+        messagebox.showerror(title="Error: No Passwords For Site!", message="You dont have a password for that "
                                                                             "website yet.")
 
 
