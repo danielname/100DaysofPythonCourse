@@ -24,4 +24,10 @@ front_image = PhotoImage(file="../FlashCards/images/card_front.png")
 front_canvas.create_image(650, 400, image=front_image)
 front_canvas.grid(row=0, column=0)
 
+title = Label(text="something", justify="center")
+title.grid(row=1, column=1)
+
+word = Label(text="something else", justify="center")
+word.grid(row=2, column=1)
+
 window.mainloop()
