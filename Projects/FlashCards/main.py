@@ -5,7 +5,8 @@ import pandas
 
 BACKGROUND_COLOR = "#B1DDC6"
 
-FRONT_BACKGROUND_IMAGE = "./images/card_front.png"
+with open("./images/card_front.png") as file:
+    FRONT_BACKGROUND_IMAGE = file.read()
 
 #---------------next word-------------------#
 
@@ -22,7 +23,7 @@ window.title("Learn French")
 window.config(width=650, height=400)
 
 background_image = PhotoImage(...)
-background_label = Label(image="./images") #i think the problem here is that i have written the filepath, but I need an image, so the first step is to get the image from the file
+background_label = Label(image=FRONT_BACKGROUND_IMAGE) #i think the problem here is that i have written the filepath, but I need an image, so the first step is to get the image from the file
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 # front_canvas = Canvas(width=650, height=400, highlightthickness=0)
