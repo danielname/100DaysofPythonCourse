@@ -37,4 +37,14 @@ title.grid(row=1, column=1)
 word = Label(text="something else", justify="center")
 word.grid(row=2, column=1)
 
+right_canvas = Canvas(width=650, height=400, highlightthickness=0)
+right_image = PhotoImage(file="images/right.png")
+right_canvas.create_image(650, 400, image=right_image)
+right_canvas.grid(row=3, column=0)
+
+wrong_canvas = Canvas(width=650, height=400, highlightthickness=0)
+wrong_image = PhotoImage(file="images/wrong.png")
+wrong_canvas.create_image(650, 400, image=wrong_image)
+wrong_canvas.grid(row=3, column=2)
+
 window.mainloop()
