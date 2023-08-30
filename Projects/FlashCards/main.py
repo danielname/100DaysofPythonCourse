@@ -5,6 +5,9 @@ import pandas
 
 BACKGROUND_COLOR = "#B1DDC6"
 
+data = pandas.read_csv("/data/french_words.csv")
+word_dict = data.to_dict()
+
 with open("./images/card_front.png") as file:
     FRONT_BACKGROUND_IMAGE = file.read()
 
