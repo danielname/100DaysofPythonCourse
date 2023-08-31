@@ -1,12 +1,19 @@
 from tkinter import *
 from tkinter import messagebox
-from random import choice
+from random import randint, choice
 import pandas
 
 BACKGROUND_COLOR = "#B1DDC6"
 
 data = pandas.read_csv("/data/french_words.csv")
 word_dict = data.to_dict()
+
+french_word_list = [key for (key, value) in word_dict]
+keys_in_order = []
+for word_index in range(len(french_word_list)):
+    ran_index = randint(0, len(french_word_list) - 1)
+    keys_in_order.append(french_word_list[ran_index])
+    french_word_list.pop(ran_index)
 
 with open("./images/card_front.png") as file:
     FRONT_BACKGROUND_IMAGE = file.read()
