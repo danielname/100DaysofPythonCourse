@@ -25,7 +25,12 @@ with open("./images/card_front.png") as file:
 
 
 #------------------add to list (wrong)------#
+def wrong_answer():
+    pass
 
+#------------------add to list (wrong)------#
+def right_answer():
+    pass
 
 #---------------------UI--------------------#
 window = Tk()
@@ -56,5 +61,8 @@ wrong_canvas = Canvas(width=100, height=100, highlightthickness=0)
 wrong_image = PhotoImage(file="images/wrong.png")
 wrong_canvas.create_image(100, 100, image=wrong_image)
 wrong_canvas.grid(row=3, column=2)
+
+#need to make the images buttons in order to use commands
+correct_button = Button(image=right_image, command=right_answer)
 
 window.mainloop()
