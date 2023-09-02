@@ -55,16 +55,18 @@ word.grid(row=2, column=1)
 right_canvas = Canvas(width=100, height=100, highlightthickness=0)
 right_image = PhotoImage(file="images/right.png")
 right_canvas.create_image(100, 100, image=right_image)
-right_canvas.grid(row=3, column=0)
+
 
 wrong_canvas = Canvas(width=100, height=100, highlightthickness=0)
 wrong_image = PhotoImage(file="images/wrong.png")
 wrong_canvas.create_image(100, 100, image=wrong_image)
-wrong_canvas.grid(row=3, column=2)
+
 
 #need to make the images buttons in order to use commands
 correct_button = Button(image=right_image, command=right_answer)
+correct_button.grid(row=3, column=0)
 
 incorrect_button = Button(image=wrong_image, command=wrong_answer)
+incorrect_button.grid(row=3, column=2)
 
 window.mainloop()
