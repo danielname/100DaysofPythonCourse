@@ -65,4 +65,6 @@ wrong_canvas.grid(row=3, column=2)
 #need to make the images buttons in order to use commands
 correct_button = Button(image=right_image, command=right_answer)
 
+incorrect_button = Button(image=wrong_image, command=wrong_answer)
+
 window.mainloop()
