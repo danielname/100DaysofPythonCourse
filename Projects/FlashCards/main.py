@@ -22,15 +22,16 @@ with open("./images/card_front.png") as file:
 
 
 #----------------card flip------------------#
-
+def card_flip():
+    pass
 
 #------------------add to list (wrong)------#
 def wrong_answer():
-    pass
+    card_flip()
 
 #------------------add to list (wrong)------#
 def right_answer():
-    pass
+    card_flip()
 
 #---------------------UI--------------------#
 window = Tk()
