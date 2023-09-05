@@ -19,7 +19,8 @@ with open("./images/card_front.png") as file:
     FRONT_BACKGROUND_IMAGE = file.read()
 
 #---------------next word-------------------#
-
+def next_word():
+    pass
 
 #----------------card flip------------------#
 def card_flip():
@@ -27,11 +28,11 @@ def card_flip():
 
 #------------------add to list (wrong)------#
 def wrong_answer():
-    card_flip()
+    next_word()
 
 #------------------add to list (wrong)------#
 def right_answer():
-    card_flip()
+    next_word()
 
 #---------------------UI--------------------#
 window = Tk()
