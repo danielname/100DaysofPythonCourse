@@ -30,9 +30,15 @@ def card_flip():
 def wrong_answer():
     next_word()
 
-#------------------add to list (wrong)------#
+#------------------right answer-------------#
 def right_answer():
     next_word()
+
+#-----------------------timer_______________#
+def timer():
+    #if timer not 0, timer -1
+    #else
+    card_flip()
 
 #---------------------UI--------------------#
 window = Tk()
