@@ -4,6 +4,7 @@ from random import randint, choice
 import pandas
 
 BACKGROUND_COLOR = "#B1DDC6"
+timer = 60
 
 data = pandas.read_csv("/data/french_words.csv")
 word_dict = data.to_dict()
@@ -20,6 +21,9 @@ with open("./images/card_front.png") as file:
 
 #---------------next word-------------------#
 def next_word():
+    #need to reset conditions to start but
+    # take second word in list
+    # and increment list counter
     pass
 
 #----------------card flip------------------#
